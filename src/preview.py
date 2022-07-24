@@ -3,7 +3,7 @@ import numpy
 import shape
 import unpixelate
 
-src = cv2.imread('images/cat-blur.jpg', cv2.IMREAD_UNCHANGED)
+src = cv2.imread('assets/cat.jpg', cv2.IMREAD_UNCHANGED)
 mr_image = shape.resize(src, 600)
 
 result = unpixelate.apply(src, 8, 600)
