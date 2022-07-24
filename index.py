@@ -22,6 +22,6 @@ image_contrasted = cv2.LUT(blurImage, lut_8u)
 
 result = shape.resize(image_contrasted, 600)
 
-cv2.imshow('Gaussian Smoothing', numpy.hstack((mr_image, result)))
+cv2.imshow('Unpixelate', numpy.hstack((mr_image, result)))
 cv2.waitKey(0)
 cv2.destroyAllWindows()
