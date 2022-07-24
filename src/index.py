@@ -1,17 +1,16 @@
 import cv2
 import numpy
-import gaussian
-import shape
-import lut
+import src.gaussian as gaussian
+import src.shape as shape
+import src.lut as lut
 
 src = cv2.imread('images/cat-blur.jpg', cv2.IMREAD_UNCHANGED)
 
 hr_image = shape.resize(src)
 mr_image = shape.resize(src, 600)
 
-image_smothing = gaussian.apply(hr_image, 10)
+image_smothing = gaussian.apply(hr_image, 7)
 
-# Color balance
 lut_result = lut.apply(image_smothing)
 
 result = shape.resize(lut_result, 600)
