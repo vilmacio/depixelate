@@ -6,7 +6,7 @@ def apply(image, weight = 5):
     max_applies = (weight // 2) + 1
 
     if (weight < 1 or weight > 10):
-        raise Exception("Weight must be between 0 and 10. The received value was {}".format(weight))
+        raise Exception("Weight must be between 1 and 10. The received value was {}".format(weight))
 
     ksizes[0] = ksizes[1] = weight * 2
 
