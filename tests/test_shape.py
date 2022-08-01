@@ -19,3 +19,8 @@ class TestSuite(unittest.TestCase):
         assert width == width_scale
         assert width != original_width
         assert height != original_height
+
+    def test_invalid_params(self):
+        sut = src.shape.resize
+
+        self.assertRaises(AttributeError, sut, None, 300)
