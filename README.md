@@ -22,25 +22,8 @@ The **apply** method accepts 3 parameters:
 - **Width Scale (Optional)**: Indicates the width of the output image. Default value is 800.
 
 ## Limitations
-Unpixelate library helps with logos, graphics and some photographs, but it doesn't help when maximum sharpness and detail is needed.
+Unpixelate library helps with logos and some graphics, but it doesn't help when maximum sharpness and detail is needed.<br />
 In the majority of cases, you'll want to improve the quality of low resolution images (about 300 pixels wide or less). Otherwise you might be a little disappointed.
-
-<div style="display: flex; justify-content: space-between">
-<div style="display: block">
-    <div>
-    <img src="assets/smothing-enlargement.png" width="85%">
-    </div>
-    <mark>200 x 113</mark>.
-    <mark>Smothing enlargement</mark>.
-</div>
-<div style="display: block">
-    <div>
-    <img src="assets/hard-edges-with-draw.png" width="85%">
-    </div>
-    <mark>200 x 113</mark>.
-    <mark>Smothing enlargement</mark>.
-</div>
-</div>
 
 ## Plans
 
