@@ -9,7 +9,7 @@ Resize and depixel low resolution images.
 import cv2
 import unpixelate
 
-original_image = cv2.imread('image.jpg', cv2.IMREAD_UNCHANGED)
+original_image = cv2.imread('image.jpg')
 
 result = unpixelate.apply(original_image, 7, 600)
 ```
