@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="unpixalate",                     # This is the name of the package
+    name="unpixelate",                      # This is the name of the package
     version="1.0.0",                        # The initial release version
     author="Vilmacio M. Silva",                     # Full name of the author
     description="Unpixelate images",
