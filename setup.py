@@ -19,5 +19,5 @@ setuptools.setup(
     python_requires='>=3.6',                # Minimum version requirement of the package
     py_modules=["unpixelate"],             # Name of the python package
     package_dir={'':'src'},     # Directory of the source code of the package
-    install_requires=['opencv', 'numpy', 'pytest']                     # Install other dependencies if any
+    install_requires=['opencv-python', 'numpy', 'pytest']                     # Install other dependencies if any
 )
