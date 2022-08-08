@@ -8,6 +8,6 @@ mr_image = shape.resize(src, 600)
 
 result = unpixelate.apply(src, 8, 600)
 
-cv2.imshow('Unpixelate Preview', numpy.hstack((mr_image, result)))
+cv2.imshow('Depixelate Preview', numpy.hstack((mr_image, result)))
 cv2.waitKey(0)
 cv2.destroyAllWindows()
