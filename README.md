@@ -1,17 +1,21 @@
-# Unpixelate
+# Depixelate
 Resize and depixel low resolution images.
 
 <img src="assets/main-preview.jpg" width="100%">
 
 ## Usage
 
+```console
+$ pip install depixelate
+```
+
 ```python
 import cv2
-import unpixelate
+import depixelate
 
 original_image = cv2.imread('image.jpg')
 
-result = unpixelate.apply(original_image, 7, 600)
+result = depixelate.apply(original_image, 7, 600)
 ```
 
 ### Params
@@ -22,7 +26,7 @@ The **apply** method accepts 3 parameters:
 - **Width Scale (Optional)**: Indicates the width of the output image. Default value is 800.
 
 ## Limitations
-Unpixelate library helps with logos and some graphics, but it doesn't help when maximum sharpness and detail is needed.<br />
+Depixelate library helps with logos and some graphics, but it doesn't help when maximum sharpness and detail is needed.<br />
 In the majority of cases, you'll want to improve the quality of low resolution images (about 300 pixels wide or less). Otherwise you might be a little disappointed.
 
 ## Plans
