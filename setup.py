@@ -4,10 +4,10 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="unpixelate",                      # This is the name of the package
+    name="depixelate",                      # This is the name of the package
     version="1.0.0",                        # The initial release version
     author="Vilmacio M. Silva",                     # Full name of the author
-    description="Unpixelate images",
+    description="Depixelate images",
     long_description=long_description,      # Long description read from the the readme file
     long_description_content_type="text/markdown",
     packages=setuptools.find_packages(),    # List of all python modules to be installed
@@ -17,7 +17,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],                                      # Information to filter the project on PyPi website
     python_requires='>=3.6',                # Minimum version requirement of the package
-    py_modules=["unpixelate"],             # Name of the python package
+    py_modules=["depixelate"],             # Name of the python package
     package_dir={'':'src'},     # Directory of the source code of the package
     install_requires=['opencv-python', 'numpy', 'pytest']                     # Install other dependencies if any
 )
