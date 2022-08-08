@@ -1,17 +1,21 @@
-# Unpixelate
+# Depixelate
 Resize and depixel low resolution images.
 
 <img src="assets/main-preview.jpg" width="100%">
 
 ## Usage
 
+```console
+$ pip install depixelate
+```
+
 ```python
 import cv2
-import unpixelate
+import depixelate
 
 original_image = cv2.imread('image.jpg')
 
-result = unpixelate.apply(original_image, 7, 600)
+result = depixelate.apply(original_image, 7, 600)
 ```
 
 ### Params
