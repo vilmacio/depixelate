@@ -1,8 +1,11 @@
 import gaussian
 import shape
 import lut
+import numpy
 
 def apply(image, weight = 6, output_scale = 800):
+
+    image = numpy.asarray(image)
 
     hr_image = shape.resize(image)
 
