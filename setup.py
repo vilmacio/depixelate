@@ -17,7 +17,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],                                      # Information to filter the project on PyPi website
     python_requires='>=3.6',                # Minimum version requirement of the package
-    py_modules=["depixelate"],             # Name of the python package
+    py_modules=["depixelate", "gaussian", "lut", "shape"],             # Name of the python package
     package_dir={'':'src'},     # Directory of the source code of the package
     install_requires=['opencv-python', 'numpy', 'pytest']                     # Install other dependencies if any
 )
