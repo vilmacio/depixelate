@@ -4,7 +4,7 @@ import shape
 import depixelate
 
 src = cv2.imread('assets/cat.jpg', cv2.IMREAD_UNCHANGED)
-mr_image = shape.resize(src, 600)
+mr_image = shape.resize(src, (110, 110), 600)
 
 result = depixelate.apply(src, 8, 600)
 
