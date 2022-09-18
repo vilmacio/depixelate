@@ -1,4 +1,3 @@
-import io
 import gaussian
 import shape
 import lut
@@ -7,14 +6,14 @@ from PIL import Image
 import cv2
 
 def apply(image, weight = 6, output_scale = 800):
-    _, buffer = cv2.imencode('.png', image)
-    io_buf = io.BytesIO(buffer)
 
-    pil_image = Image.open(io_buf).convert('RGBA')
+    pil_image = Image.open(image).convert('RGBA')
 
     width, height = pil_image.size
     
-    image = numpy.array(image)
+    image = numpy.array(pil_image)
+
+    image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
     
     hr_image = shape.resize(image, (width, height))
 
