@@ -31,4 +31,4 @@ In the majority of cases, you'll want to improve the quality of low resolution i
 
 ## Plans
 
-- [ ] Anti-aliasing
+- [ ] Depixelizing Pixel Art Implementation
