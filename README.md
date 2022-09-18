@@ -31,4 +31,4 @@ In the majority of cases, you'll want to improve the quality of low resolution i
 
 ## Plans
 
-- [ ] Depixelizing Pixel Art Implementation
+- [ ] [Depixelizing Pixel Art](https://johanneskopf.de/publications/pixelart/paper/pixel.pdf) Implementation
