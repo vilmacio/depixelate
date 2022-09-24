@@ -4,6 +4,7 @@ Resize and depixel low resolution images.
 <img src="assets/main-preview.jpg" width="100%">
 
 ## Usage
+First of all, you might want to check out the [Online Demo](https://vilmacio.github.io/depixelate-app/). Once done, let's code.
 
 ```console
 $ pip install depixelate
