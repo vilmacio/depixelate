@@ -1,5 +1,5 @@
 # Depixelate
-Resize and depixel low resolution images.
+Upscaling and enhance low resolution images.
 
 <img src="assets/main-preview.jpg" width="100%">
 
