@@ -8,6 +8,7 @@ def scale(number, original_scale, new_scale):
 # test = scale(626, (0, 626), (0, 255))
 
 from PIL import Image
+from math import pow, sqrt
   
 input_image = Image.open('assets/cat.jpg')
 pixel_map = input_image.load()
@@ -27,7 +28,14 @@ for i in range(width):
         if (j == 0 or i == 0 or i == (width - 1) or j == (height - 1)):
             energy_map[i].append(626)
         else:
-            lR = input_image.getpixel((i - 1, j))
+            lR, lG, lB = input_image.getpixel((i - 1, j))
+            mR, mG, mB = input_image.getpixel((i, j))
+            rR, rG, rB = input_image.getpixel((i + 1, j))
+
+            energy_sum = pow(lR - mR, 2) + pow(lG - mG, 2) + pow(lB - mB, 2) + pow(rR - mR, 2) + pow(rG - mG, 2) + pow(rB - mB, 2)
+            energy = sqrt(energy_sum)
+
+            energy_map[i].append(energy)
             
 for i in range(width):
     for j in range(height):
