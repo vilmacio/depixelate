@@ -12,7 +12,7 @@ def scale(number, original_scale, new_scale):
 # test = scale(626, (0, 626), (0, 255))
 
 
-input_image = Image.open('assets/cat.jpg')
+input_image = Image.open('assets/cat-hard-edges.jpg')
 pixel_map = input_image.load()
 width, height = input_image.size
 
@@ -29,16 +29,16 @@ for i in range(width):
 
         # to do: handle different values to unpack
         if (i == 0):
-            lR, lG, lB = input_image.getpixel((i, j))
-            rR, rG, rB = input_image.getpixel((i + 1, j))
+            lR, lG, lB, *_ = input_image.getpixel((i, j))
+            rR, rG, rB, *_ = input_image.getpixel((i + 1, j))
         elif (i == (width - 1)):
-            lR, lG, lB = input_image.getpixel((i - 1, j))
-            rR, rG, rB = input_image.getpixel((i, j))
+            lR, lG, lB, *_ = input_image.getpixel((i - 1, j))
+            rR, rG, rB, *_ = input_image.getpixel((i, j))
         else:
-            lR, lG, lB = input_image.getpixel((i - 1, j))
-            rR, rG, rB = input_image.getpixel((i + 1, j))
+            lR, lG, lB, *_ = input_image.getpixel((i - 1, j))
+            rR, rG, rB, *_ = input_image.getpixel((i + 1, j))
 
-        mR, mG, mB = input_image.getpixel((i, j))
+        mR, mG, mB, *_ = input_image.getpixel((i, j))
 
         energy_sum = pow(lR - mR, 2) + pow(lG - mG, 2) + pow(lB - mB, 2) + \
             pow(rR - mR, 2) + pow(rG - mG, 2) + pow(rB - mB, 2)
