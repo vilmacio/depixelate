@@ -17,18 +17,22 @@ def get_energy_map():
     pixel_map = input_image.load()
     width, height = input_image.size
 
+    SCALE = 4
+    input_image = input_image.resize((width * SCALE, height * SCALE), resample=0)
+    width, height = input_image.size
+
     energy_map = []
 
-    energy_image = Image.new('RGB', (width * 10, height * 10))
+    energy_image = Image.new('RGB', (width, height))
     ei_pixel_map = energy_image.load()
 
     ENERGY_SCALE = [0, 626]
 
+    ENERGY_2D = False
+
     for i in range(width):
         energy_map.append([])
         for j in range(height):
-
-            # to do: handle different values to unpack
             if (i == 0):
                 lR, lG, lB, *_ = input_image.getpixel((i, j))
                 rR, rG, rB, *_ = input_image.getpixel((i + 1, j))
@@ -38,28 +42,32 @@ def get_energy_map():
             else:
                 lR, lG, lB, *_ = input_image.getpixel((i - 1, j))
                 rR, rG, rB, *_ = input_image.getpixel((i + 1, j))
-
-            if (j == 0):
-                bR, bG, bB, *_ = input_image.getpixel((i, j + 1))
-                tR, tG, tB, *_ = input_image.getpixel((i, j))
-            elif (j == (height - 1)):
-                bR, bG, bB, *_ = input_image.getpixel((i, j))
-                tR, tG, tB, *_ = input_image.getpixel((i, j - 1))
-            else:
-                bR, bG, bB, *_ = input_image.getpixel((i, j + 1))
-                tR, tG, tB, *_ = input_image.getpixel((i, j - 1))
-
+            
             mR, mG, mB, *_ = input_image.getpixel((i, j))
 
             energy_horizontal_sum = pow(lR - mR, 2) + pow(lG - mG, 2) + pow(lB - mB, 2) + \
                 pow(rR - mR, 2) + pow(rG - mG, 2) + pow(rB - mB, 2)
             energy_horizontal = sqrt(energy_horizontal_sum)
 
-            energy_vertical_sum = pow(bR - mR, 2) + pow(bG - mG, 2) + pow(bB - mB, 2) + \
-                pow(tR - mR, 2) + pow(tG - mG, 2) + pow(tB - mB, 2)
-            energy_vertical = sqrt(energy_vertical_sum)
+            if (ENERGY_2D):
+                if (j == 0):
+                    bR, bG, bB, *_ = input_image.getpixel((i, j + 1))
+                    tR, tG, tB, *_ = input_image.getpixel((i, j))
+                elif (j == (height - 1)):
+                    bR, bG, bB, *_ = input_image.getpixel((i, j))
+                    tR, tG, tB, *_ = input_image.getpixel((i, j - 1))
+                else:
+                    bR, bG, bB, *_ = input_image.getpixel((i, j + 1))
+                    tR, tG, tB, *_ = input_image.getpixel((i, j - 1))
 
-            energy_map[i].append((energy_horizontal + energy_vertical) / 2)
+                energy_vertical_sum = pow(bR - mR, 2) + pow(bG - mG, 2) + pow(bB - mB, 2) + \
+                    pow(tR - mR, 2) + pow(tG - mG, 2) + pow(tB - mB, 2)
+                energy_vertical = sqrt(energy_vertical_sum)
+
+                energy_map[i].append((energy_horizontal + energy_vertical) / 2)
+            else:
+                energy_map[i].append(energy_horizontal)
+
 
     for i in range(width):
         for j in range(height):
