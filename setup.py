@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="depixelate",                      # This is the name of the package
-    version="1.0.5",                        # The initial release version
+    version="1.0.6",                        # The initial release version
     author="Vilmacio M. Silva",                     # Full name of the author
     description="Depixelate images",
     long_description=long_description,      # Long description read from the the readme file
@@ -19,5 +19,5 @@ setuptools.setup(
     python_requires='>=3.6',                # Minimum version requirement of the package
     py_modules=["depixelate", "gaussian", "lut", "shape"],             # Name of the python package
     package_dir={'':'src'},     # Directory of the source code of the package
-    install_requires=['opencv-python', 'numpy', 'pytest']                     # Install other dependencies if any
+    install_requires=['opencv-python', 'numpy', 'pytest', 'Pillow']                     # Install other dependencies if any
 )
