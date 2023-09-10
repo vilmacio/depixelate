@@ -7,7 +7,7 @@ import cv2
 
 def apply(image, weight = 6, output_scale = 800):
 
-    pil_image = Image.open(image).convert('RGBA')
+    pil_image = Image.fromarray(image).convert('RGBA')
 
     width, height = pil_image.size
     
